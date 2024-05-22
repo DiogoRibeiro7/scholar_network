@@ -46,7 +46,7 @@ plt.figure(figsize=(36, 24), dpi=150)
 
 nx.draw_networkx_nodes(G, pos,
                        nodelist=[n for n in G.nodes() if n.startswith('Author/')],
-                       node_size=max_len * 700)
+                       node_size=max_len * 7)
 
 nx.draw_networkx_nodes(G, pos,
                        nodelist=[n for n in G.nodes() if n.startswith('Paper/')],

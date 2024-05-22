@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scholarly import scholarly
 
 # Initial setup
-seed_author = 'Aldina Correia'
+seed_author = 'Vitor Braga'
 G = nx.Graph()
 
 # Search for the author
@@ -61,5 +61,5 @@ nx.draw_networkx_labels(G, pos,
                         font_weight='bold')
 
 plt.axis('off')
-plt.savefig('sample_plot.png')
+plt.savefig('sample_plot_braga.png')
 plt.show()

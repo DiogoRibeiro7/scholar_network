@@ -1,6 +1,13 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 from scholarly import scholarly
+from scholarly import ProxyGenerator
+
+# Set up a ProxyGenerator object to use free proxies
+# This needs to be done only once per session
+pg = ProxyGenerator()
+pg.FreeProxies()
+scholarly.use_proxy(pg)
 
 # Initial setup
 seed_author = 'Aldina Correia'
@@ -12,9 +19,10 @@ author = scholarly.fill(next(search_query))
 
 print(len(author))
 
+print(author)
+
 # Add nodes and edges to the graph
 for p in author['publications']:
-    print(p)
     publication_filled = scholarly.fill(p)
     bib = publication_filled['bib']
     title = bib['title'].replace(':', ' ')
